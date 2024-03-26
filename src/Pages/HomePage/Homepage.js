@@ -6,10 +6,10 @@ function HomePage() {
   return (
     <div className="HomePage">
       <div className="title">
-        <span>&lt;/&gt; AlgoAlley</span>
+        <span>O(1)</span>
       </div>
       <div className="search-bar">
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search Profiles" />
       </div>
       <div className="profile-icon">
         <FaUserCircle size={32} />
