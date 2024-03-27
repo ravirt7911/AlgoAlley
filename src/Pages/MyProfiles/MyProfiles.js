@@ -14,6 +14,8 @@ const Profiles = () => {
       currentRating: 1600,
       username: "John Doe",
       ratingGraph: defaultRatingGraph,
+      noofcontests: 10,
+      solvedproblems: "50",
     },
     {
       handle: "jane_smith",
@@ -23,6 +25,8 @@ const Profiles = () => {
       currentRating: 1900,
       username: "Jane Smith",
       ratingGraph: defaultRatingGraph,
+      noofcontests: 10,
+      solvedproblems: "50",
     },
     {
       handle: "mike_johnson",
@@ -32,23 +36,25 @@ const Profiles = () => {
       currentRating: 2300,
       username: "Mike Johnson",
       ratingGraph: defaultRatingGraph,
+      noofcontests: 10,
+      solvedproblems: "50",
     },
   ];
 
   return (
     <div className="MyProfiles">
-      <div className="profiles-container">
-        {profiles.map((profile) => (
-          <div key={profile.handle} className="profile-card">
-            <div className="profile-header">
-              <h3>{profile.handle}</h3>
-              <a
-                href={`https://example.com/${profile.handle}`}
-                className="profile-icon"
-              >
-                <FaUser size={20} />
-              </a>
-            </div>
+      {profiles.map((profile) => (
+        <div key={profile.handle} className="profile-card">
+          <div className="profile-header">
+            <h3>{profile.handle}</h3>
+            <a
+              href={`https://example.com/${profile.handle}`}
+              className="profile-icon"
+            >
+              <FaUser size={20} />
+            </a>
+          </div>
+          <div className="profile-details-container">
             <img
               src={profile.profileImage}
               alt="Profile"
@@ -68,14 +74,22 @@ const Profiles = () => {
                 Username: <strong>{profile.username}</strong>
               </p>
             </div>
-            <img
-              src={profile.ratingGraph}
-              alt="Rating Graph"
-              className="rating-graph"
-            />
           </div>
-        ))}
-      </div>
+          <img
+            src={profile.ratingGraph}
+            alt="Rating Graph"
+            className="rating-graph"
+          />
+          <div className="profile-details-container2">
+            <p>
+              No. of Contests: <strong>{profile.noofcontests}</strong>
+            </p>
+            <p>
+              Solved Problems: <strong>{profile.solvedproblems}</strong>
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
